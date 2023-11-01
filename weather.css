@@ -1,0 +1,417 @@
+@font-face {
+    font-family: 'aileron';
+    src: url("./webfonts/aileron_regular_macroman/Aileron-Regular-webfont.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'aileron';
+    src: url("./webfonts/aileron_heavy_macroman/Aileron-Heavy-webfont.woff") format('woff');
+    font-weight: bolder;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'aileron';
+    src: url("./webfonts/aileron_bold_macroman/Aileron-Bold-webfont.woff") format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'aileron';
+    src: url("./webfonts/aileron_semibold_macroman/Aileron-SemiBold-webfont.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background: url(background/Clouds.jpg) no-repeat center center/cover;
+    font-family: "aileron";
+    font-weight: bold;
+}
+nav{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
+}
+input,#confirm{
+    padding: 5px;
+    font-size: 1.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    outline: none;
+}
+input{
+    height: 2.5rem;
+    padding-left: 15px;
+    border: 1px solid rgb(80, 80, 80);
+    
+}
+#confirm{
+    height: 3.3rem;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid rgb(68, 68, 68);
+    background-color: rgba(80, 80, 80, 0.295);
+    width: 5%;
+    color: white;
+}
+.disp{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 10% 0% 0% 5%;
+    font-size: 2.5rem;
+    background-color: rgb(134, 134, 134,0.3);
+    backdrop-filter: blur(2.25px);
+    box-shadow: -5px 5px 60px 5px #5252522d;
+    border: 1px solid rgba(175, 175, 175, 0.3);
+    padding: 10px 0;
+    color: rgb(48, 48, 48);
+}
+#date{
+    display: inline-block;
+    padding-left: 20%;
+}
+#prediction{
+    margin-left: 10%;
+
+}
+#location{
+    text-align: center;
+    margin-top: 2%;
+}
+.name{
+    display: flex;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.274);
+}
+#copy{
+    margin: 0 auto;
+    padding-top: 5%;
+    font-style: italic;
+}
+option{
+    background-color: rgb(134, 134, 134,0.3);
+}
+.meteo,.dateH{
+    display: flex;
+    height: fit-content;
+    align-items: center;
+}
+img,#deg,#humidity,#degP,#humidityP{
+    display: inline-block;
+    vertical-align: middle; 
+    line-height: 2rem;
+}
+img{
+    width: 5rem;
+    padding: 10px;
+    color: white;
+}
+#deg,#humidity{
+    margin-left: 5rem;
+    font-size: 4rem;
+}
+#degP,#humidityP{
+    font-size: 1.5rem;
+    position: absolute;
+
+}
+#humidityP{
+    left: 72%;
+    bottom: 30%;
+}
+#degP{
+    left: 37%;
+    bottom: 30%;
+}
+.error{
+    position: absolute;
+    border: 2px solid rgb(255, 141, 141);
+    padding: 10px;
+    left: 20%;
+    top: 20%;
+    font-size: 2rem;
+    color: red;
+    background-color: #ebebeb1f;
+    display: none;
+}
+#preloader{
+    background: rgb(0, 0, 0) url(cube.gif) no-repeat center center;
+    background-size: 30%;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+}
+#errorServer{
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: none;
+}
+#checkInternet{
+    z-index: 100;
+    font-size: 4rem;
+    color: aliceblue;
+    display: none;
+}
+@media screen and  (max-width: 378px) {
+    nav {
+        padding: 2rem 0;
+    }
+    .disp {
+        width: 90%;
+        margin: 5% 5% 0% 5%;
+    }
+    #deg, #humidity {
+        font-size: 2rem;
+    }
+    #degP, #humidityP {
+        font-size: 1rem;
+    }
+    input{
+        width: 80%;
+    }
+    #confirm{
+        width: 10%;
+    }
+    #date{
+        padding-left: 15%;
+        font-size: 1.5rem;
+    }
+    #humidityP{
+        left: 75%;
+        bottom: 30%;
+        font-size: 1rem;
+    }
+    #degP{
+        left: 40%;
+        bottom: 30%;
+        font-size: 1rem;
+    }
+    #deg,#humidity{
+        margin-left: 1rem;
+        font-size: 2rem;
+    }
+    .error{
+        font-size: 2rem;
+        left: 0;
+    }}
+
+
+@media screen and (max-width: 699px) {
+    nav {
+        padding: 2rem 0;
+    }
+    .disp {
+        width: 90%;
+        margin: 5% 5% 0% 5%;
+    }
+    #deg, #humidity {
+        font-size: 2rem;
+    }
+    #degP, #humidityP {
+        font-size: 1rem;
+    }
+
+    #confirm{
+        width: 10%;
+    }
+    #date{
+        padding-left: 10%;
+        font-size: 1.8rem;
+    }
+    #humidityP{
+        left: 70%;
+        bottom: 35%;
+    }
+    #degP{
+        left: 40%;
+        bottom: 35%;
+    }
+    #deg,#humidity{
+        margin-left: 1.2rem;
+    }
+    .error{
+        font-size: 2rem;
+        left: 0%;
+    }}
+@media screen and (min-width:700px) and (max-width: 800px) {
+    nav {
+        padding: 2rem 0;
+    }
+    .disp {
+        width: 90%;
+        margin: 5% 5% 0% 5%;
+    }
+    #deg, #humidity {
+        font-size: 2rem;
+    }
+    #degP, #humidityP {
+        font-size: 1rem;
+    }
+    input{
+        width: 80%;
+    }
+    #confirm{
+        width: 10%;
+    }
+    #date{
+        padding-left: 20%;
+        font-size: 3rem;
+    }
+    #humidityP{
+        left: 77%;
+        bottom: 30%;
+        font-size: 1.5rem;
+    }
+    #degP{
+        left: 40%;
+        bottom: 30%;
+        font-size: 1.5rem;
+    }
+    #deg,#humidity{
+        margin-left: 8rem;
+        font-size: 3rem;
+    }
+    .error{
+        font-size: 2rem;
+        left: 0%;
+        top: 10%;
+    }}
+@media screen and (min-width:801px) and (max-width: 900px) {
+    nav {
+        padding: 2rem 0;
+    }
+    .disp {
+        width: 90%;
+        margin: 5% 5% 0% 5%;
+    }
+    #deg, #humidity {
+        font-size: 2rem;
+    }
+    #degP, #humidityP {
+        font-size: 1rem;
+    }
+    input{
+        width: 80%;
+    }
+    #confirm{
+        width: 10%;
+    }
+    #date{
+        padding-left: 20%;
+        font-size: 3rem;
+    }
+    #humidityP{
+        left: 80%;
+        bottom: 30%;
+        font-size: 1.5rem;
+    }
+    #degP{
+        left: 40%;
+        bottom: 30%;
+        font-size: 1.5rem;
+    }
+    #deg,#humidity{
+        margin-left: 9.5rem;
+        font-size: 3rem;
+    }.error{
+        font-size: 2rem;
+        left: 0%;
+        top: 10%;
+    }}
+@media screen and (min-width:901px) and (max-width: 1000px) {
+    nav {
+        padding: 2rem 0;
+    }
+    .disp {
+        width: 90%;
+        margin: 5% 5% 0% 5%;
+    }
+    #deg, #humidity {
+        font-size: 2rem;
+    }
+    #degP, #humidityP {
+        font-size: 1rem;
+    }
+    input{
+        width: 80%;
+    }
+    #confirm{
+        width: 10%;
+    }
+    #date{
+        padding-left: 20%;
+        font-size: 3rem;
+    }
+    #humidityP{
+        left: 73%;
+        bottom: 30%;
+        font-size: 1.5rem;
+    }
+    #degP{
+        left: 40%;
+        bottom: 30%;
+        font-size: 1.5rem;
+    }
+    #deg,#humidity{
+        margin-left: 9.5rem;
+        font-size: 3rem;
+    }
+    .error{
+        font-size: 2rem;
+        left: 0%;
+    }}
+@media screen and (min-width:1001px) and (max-width: 1200px) {
+    nav {
+        padding: 2rem 0;
+    }
+    .disp {
+        width: 90%;
+        margin: 5% 5% 0% 5%;
+    }
+    #deg, #humidity {
+        font-size: 2rem;
+    }
+    #degP, #humidityP {
+        font-size: 1rem;
+    }
+    input{
+        width: 80%;
+    }
+    #confirm{
+        width: 10%;
+    }
+    #date{
+        padding-left: 20%;
+        font-size: 3rem;
+    }
+    #humidityP{
+        left: 66%;
+        bottom: 30%;
+        font-size: 1.5rem;
+    }
+    #degP{
+        left: 36%;
+        bottom: 30%;
+        font-size: 1.5rem;
+    }
+    #deg,#humidity{
+        margin-left: 9.5rem;
+        font-size: 3rem;
+    }}

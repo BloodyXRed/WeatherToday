@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherToday</title>
+    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="author" content="Fadli Wassim">
+    <meta name="keywords" content="weather, app, openweatherapi, fadli, wassim, website, weather website, real time weather, my city weather, WeatherToday">
+
+    <meta property="og:title" content="WeatherToday" />
+
+    <meta property="og:description" content="Get the latest weather updates for your location or choose any city around the world. My weather site, powered by the OpenWeather API, provides real-time weather information,current temperature and humidity . Plan your day with confidence, no matter where you are." />
+
+    <meta name="description" content="Get the latest weather updates for your location or choose any city around the world. My weather site, powered by the OpenWeather API, provides real-time weather information,current temperature and humidity . Plan your day with confidence, no matter where you are.">
+
+
+    <meta property="og:image" content="https://images.unsplash.com/photo-1516912481808-3406841bd33c?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d2VhdGhlcnxlbnwwfHwwfHx8MA%3D%3D" />
+    
+</head>
+
+<body>
+    <div id="errorServer"><p id="errorMsg"></p></div>
+    <div id="preloader"><p id="checkInternet">Please check your internet connection and try again.</p></div>
+    <div class="error">
+        <p>City not found. Please check the city name and try again.</p>
+    </div>
+    <div class="container">
+        <nav>
+            <input type="text" placeholder="Enter your location" id="search">
+            <button id="confirm"><i class="fa-regular fa-circle-check"></i></button>
+        </nav>
+        <div class="disp">
+            <div class="dateH">
+                <p  id="date">2023/13/10 </p>
+            </div>
+            <div id="meteo">
+                <img id="prediction" src="Icons/clouds.png"> <span id="deg">__°c</span> <span id="humidity">__%</span>
+            </div>
+            <div id="meteo2">
+                <p id="degP">Temperature</p> <p id="humidityP">humidity</p>
+            </div>
+            <p id="location">____</p>
+        </div>
+    </div>
+    <div class="name">
+        <p id="copy"> Wassim</p>
+    </div>
+
+
+    
+    <script src="weather.js" type="module"></script>
+    <script src="APIKEY.js" type="module"></script>
+</body>
+</html>
